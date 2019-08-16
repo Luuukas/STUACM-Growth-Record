@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>mindMap</title>
+    <script src="./js/jquery-3.2.1.min.js"></script>
+</head>
+<body style="text-align: center">
+    <form action="http://www.stuacm.club/addAcmer" method="POST">
+        <label>username: </label><br>
+        <input name="username"><br>
+        <label>password: </label><br>
+        <input name="password"><br>
+        <label>type: </label><br>
+        <input name="type"><br>
+        <label>initialized Mission(JSON)</label><br>
+        <textarea style="width: 50%;height:75%" name="mission"></textarea><br>
+        <button type="submit">add!</button>
+    </form>
+    <form action="http://www.stuacm.club/appendMissions" method="POST">
+        <label>type: </label><br>
+        <input name="type"><br>
+        <label>new Mission(JSON)</label><br>
+        <textarea style="width: 50%;height:75%" name="newMission"></textarea><br>
+        <button type="submit">release!</button>
+    </form>
+    <form action="http://www.stuacm.club/refreshMissions" method="GET">
+        <button type="submit">refresh!</button>
+    </form>
+</body>
+</html>

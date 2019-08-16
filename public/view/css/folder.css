@@ -1,0 +1,24 @@
+.panel,.flip
+{
+    text-align: left;
+    width: 375px;
+}
+.panel
+{
+    display:none;
+}
+.folder_li{
+    list-style-type: disc;
+    margin: 5px;
+}
+.file_li{
+    list-style-type: circle;
+    margin: 5px;
+}
+#folder_container ul{
+    font-size: 20px;
+    padding-left: 20px;
+}
+#folder_container .folder_lora{
+    margin-right: 20px;
+}

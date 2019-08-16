@@ -1,0 +1,7 @@
+.urls_li{
+    list-style-type: circle;
+    margin: 5px;
+}
+.urls_li a{
+    margin-right: 20px;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>mindMap</title>
+  <script src="./js/jquery-3.2.1.min.js"></script>
+  <script src="./js/mind-map.js"></script>
+  <script src="./js/folder.js"></script>
+  <script src="./js/profile.js"></script>
+  <script src="./js/urls.js"></script>
+  <link rel="stylesheet" href="./css/mind-map.css">
+  <link rel="stylesheet" href="./css/layui.css">
+  <link rel="stylesheet" type="text/css" href="./css/detail.css">
+  <link rel="stylesheet" href="./css/folder.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/profile.css">
+  <link rel="stylesheet" type="text/css" href="./css/mission_popup.css">
+  <link rel="stylesheet" type="text/css" href="./css/btns.css">
+  <link rel="stylesheet" type="text/css" href="./css/mission.css">
+  <link rel="stylesheet" type="text/css" href="./css/urls.css">
+</head>
+
+<body style="background-image: url(../images/background.jpg)">
+  <div id="left_block">
+    <div id="profile_container" style="width: 95%;height: 18%;padding:20% 2%;text-align: center;border: 2px solid #4F4F4F;border-radius: 10px">
+      <h1 id="userName" onclick="updateName()">Luuukas</h1><br>
+      <h5 id="userSign" onclick="updateSign()" style="color: #7A8B8B">This gay is so lazy that he left nothing.</h5><br>
+      <form action="/updateHandle" method="POST" target="substitute">
+        <input style="width: 90%" id="codeforces" name="codeforces" placeholder="Codeforces Handle"><br>
+        <input style="width: 90%" id="sdut" name="sdut" placeholder="SDUT Handle"><br><br>
+        <button class="save-btn shadow-btn" type="submit" onclick="alert('发送成功')">save</button>
+      </form>
+      <iframe id="substitute" name="substitute" style="display: none"></iframe>
+    </div>
+    <div style="width: 100%;height: 5%;padding:2% 0;text-align: center">
+      <button class="mindmap-btn shadow-btn" onclick="gotoMindmap()">知识树</button>
+    </div>
+    <div id="folder" style="width: 100%;height: 65.5%;margin-top: 5%">
+      <label style="font-size: 24px">
+        文件管理
+      </label>
+      <button class="save-btn shadow-btn" onclick=" updateFolder()" style="float: right">save</button>
+      <div id="folder_container" class="bar" style="width:90%;height:82%;overflow:scroll;padding:5%;border: 2px solid #4F4F4F;border-radius: 10px"></div>
+    </div>
+  </div>
+  <div id="right_block">
+    <div id=mission_block" style="width:100%;height:40%">
+      <div id="mission_container" class="bar" style="border: 2px solid #4F4F4F;border-radius: 10px"></div>
+      <!-- 弹窗内容开始 -->
+      <div id="mission_background" class="back">
+        <div class="mission">
+          <div id="mission_close">
+            <span id="mission_close-button">×</span>
+            <h2>详细内容</h2>
+          </div>
+          <div id="material">
+            <h3>阅读材料</h3>
+            <ul id="material_urls">
+            </ul>
+          </div>
+          <div id="mission">
+            <h3>实战例题</h3><br>
+            <table id="mission_table" width="100%" border="1" cellspacing="1" cellpadding="4">
+              <tr>
+                <td rowspan="2" class="btgn">实战例题</td>
+                <td colspan="2" class="btgn">解题状态</td>
+              </tr>
+
+              <tr>
+                <td class="btgn" style="width: 80px">截止状态</td>
+                <td class="btgn" style="width: 80px">目前状态</td>
+              </tr>
+
+            </table><br>
+          </div>
+          <h3 id="mission_foot">底部内容</h3>
+        </div>
+      </div>
+      <!-- 弹窗内容结束 -->
+      <script src="./js/mission.js"></script>
+    </div>
+    <div id="urls_block" style="width:100%;height:65%;margin-top: 5%;">
+      <label style="font-size: 24px">
+        友情链接
+      </label>
+      <i class="add-btn" onclick="addUrl()"></i>
+      <button class="save-btn shadow-btn" onclick="updateUrls()" style="float: right">save</button>
+      <div id="urls_container" style="width:90%;height:81%;overflow-y:scroll;padding-left: 10%;border: 2px solid #4F4F4F;border-radius: 10px" class="bar">
+        <br><br>
+        <ul id="urls" style="width: 100%;margin-left: 20%">
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="middle_block">
+    <div id="mindmap_block" style="width:100%;height:96.5%">
+      <button class="save-btn shadow-btn" onclick="updateMindmap()" style="float: right">save</button>
+      <!-- 弹窗内容开始 -->
+      <div id="detail_background" class="back">
+        <div id="detail" class="content">
+          <div id="detail_close">
+            <span id="detail_close-button">×</span>
+            <h2>详细内容</h2>
+          </div>
+          <div id="detail_left" class="detail-content">
+            <h3>参考资料<i class="add-btn" onclick="detail_addUrl('left_urls')"></i></h3>
+            <ul id="left_urls">
+            </ul>
+          </div>
+          <div id="detail_right" class="detail-content">
+            <h3>例题实战<i class="add-btn" onclick="detail_addUrl('right_urls')"></i></h3>
+            <ul id="right_urls">
+            </ul>
+          </div>
+          <h3 id="detail_foot">底部内容</h3>
+        </div>
+      </div>
+      <!-- 弹窗内容结束 -->
+      <script src="./js/detail.js"></script>
+      <div id="mindmap" class="hTree bar" style="overflow: scroll;border: 2px solid #4F4F4F;border-radius: 10px"></div>
+    </div>
+    <div id="iframe_block" style="width:100%;height:100%;display: none">
+      <iframe id="previewFile" name="previewFile" style="width: 100%;height: 100%" src=""></iframe>
+    </div>
+  </div>
+
+</body>
+
+</html>

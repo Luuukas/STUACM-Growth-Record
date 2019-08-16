@@ -1,0 +1,48 @@
+.remove-btn{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    padding: 0 3px;
+    cursor: pointer;
+    background: url("../images/remove_icon.png") center no-repeat;
+}
+.add-btn{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    padding: 0 3px;
+    cursor: pointer;
+    background: url("../images/add_icon.png") center no-repeat;
+}
+.rename-btn{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    padding: 0 3px;
+    cursor: pointer;
+    background: url("../images/rename_icon.png") center no-repeat;
+}
+.delete-btn {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    padding: 0 3px;
+    cursor: pointer;
+    background: url("../images/delete_icon.png") center no-repeat;
+}
+.add-folder-btn{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    padding: 0 3px;
+    cursor: pointer;
+    background: url("../images/folder_icon.png") center no-repeat;
+}
+.add-file-btn{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    padding: 0 3px;
+    cursor: pointer;
+    background: url("../images/file_icon.png") center no-repeat;
+}

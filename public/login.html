@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <script src="./view/js/jquery-3.2.1.min.js"></script>
+    <script>
+        function login() {
+            var json = {
+                "username": $("#username").val(),
+                "password": $("#password").val()
+            }
+            $.ajax({
+                url: '/login', /*接口域名地址*/
+                type: 'post',
+                data: JSON.stringify(json),
+                contentType: 'application/json',
+                processData: false,
+                success: function (res, status, xhr) {
+                    if (res == "CORRECT") {
+                        window.location.href = "/edit/index.html";
+                    }else{
+                        alert(res);
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+
+<body style="height: 100%;text-align: center;padding: 15% 40%;border-radius: 20px;background-color: #F8F8FF">
+    <div style="background-color: #FFFAF0;padding:5%;border: 2px solid #4F4F4F;border-radius: 20px">
+        <h3 style="color: #CD3333">Welcome to STUACM!</h3>
+        <input style="width:60%" id="username" placeholder="username"><br>
+        <input style="width:60%" id="password" type="password" placeholder="password"><br><br>
+        <button onclick="login()">Login</button>
+    </div>
+</body>
+
+</html>

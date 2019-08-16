@@ -1,0 +1,65 @@
+#mission .biaoti {
+    font-family: "Microsoft Himalaya";
+    font-size: 26px;
+    border-bottom: 1px dashed #CCCCCC;
+    color: #255e95;
+
+}
+
+#mission .btgn {
+    font-family: "Microsoft YaHei UI";
+    font-size: 16px;
+    color: #255e95;
+    background-color: #e9faff;
+    text-align: center;
+}
+
+#material_urls{
+    margin-left: 5%;
+    margin-top:2%;
+}
+
+.AC,.OK{
+    background-color: #90EE90;
+    text-align: center;
+}
+
+.WA,.WRONG_ANSWER{
+    background-color: #CD0000;
+    text-align: center;
+}
+
+.CE,.COMPILATION_ERROR{
+    background-color: #838B8B;
+    text-align: center;
+}
+
+.PE{
+    background-color: #DA70D6;
+    text-align: center;
+}
+
+.TLE,.TIME_LIMIT_EXCEEDED{
+    background-color: #00BFFF;
+    text-align: center;
+}
+
+.MLE{
+    background-color: #FFC125;
+    text-align: center;
+}
+
+.RE{
+    background-color: #FF8247;
+    text-align: center;
+}
+
+.OLE{
+    background-color: #E0FFFF;
+    text-align: center;
+}
+
+.UK{
+    background-color: #008B8B;
+    text-align: center;
+}
