@@ -1,4 +1,4 @@
-var formidable = require('formidable');
+﻿var formidable = require('formidable');
 var fs = require('fs');
 exports.doAdd = function (req, res, next) {//对应前端请求的路径，请求方法
     var form = formidable.IncomingForm({
@@ -44,6 +44,6 @@ exports.doAdd = function (req, res, next) {//对应前端请求的路径，请�
                 url = form.uploadDir + "/" + nfn;
                 fs.renameSync(file[1].path, url);    // 重命名文件，默认的文件名是带有一串编码的，我们要把它还原为它原先的名字。
             });
-            res.send("http://www.stuacm.club/"+nfn);
+            res.send("http://www.stuacm.club/files/"+nfn);
         });
 };
